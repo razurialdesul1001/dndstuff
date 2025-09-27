@@ -11,16 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     
     <!-- Chosen Palette: Primal Earth (Deep Forest Black, Light Ash/Bone, Muted Sage Accent) -->
-    <!-- Aesthetic Updates: Darker, moodier background. Enhanced contrast between text and background. Wood-like border color updated for greater visual presence. -->
     <style>
         /* New Dark & Primal Palette */
+        /* --- BACKGROUND BLEND IMPLEMENTED HERE --- */
         body {
-            font-family: 'Alegreya', serif; /* Changed to Alegreya for ancient, organic readability */
-            background-color: #151B18; /* Deep Forest Black */
-            color: #D3D9CF; /* Light Ash/Bone Text */
-            /* Add smooth scrolling behavior for better navigation feel */
+            font-family: 'Alegreya', serif;
+            /* * IMPORTANT: Decreased overlay opacity (0.7, was 0.9) to make the background image more visible.
+            * If the image still doesn't appear, please verify the URL below is correct:
+            */
+            background-image: linear-gradient(rgba(21, 27, 24, 0.7), rgba(21, 27, 24, 0.7)), 
+                              url('https://raw.githubusercontent.com/razurialdesul1001/dndstuff/main/elarion.jpg');
+            background-color: #151B18; /* Fallback color */
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-attachment: fixed; /* Keeps the image still as the user scrolls */
+            color: #D3D9CF; 
             scroll-behavior: smooth;
         }
+        /* --- END BACKGROUND BLEND --- */
+
         h1, h2, h3 {
             font-family: 'Cinzel', serif; /* Changed to Cinzel for carved, stone-like headings */
         }
@@ -31,7 +40,8 @@
             color: #77AD78; /* Muted Sage Green Accent */
         }
         .bg-card {
-            background-color: #262B28; /* Dark Charcoal/Green-Gray Card Background */
+            /* Using a slightly opaque background for the cards to allow the background image to show through slightly */
+            background-color: rgba(38, 43, 40, 0.95); /* Dark Charcoal/Green-Gray Card Background with 95% opacity */
         }
         .border-subtle {
             border-color: #4A544A; /* Dark subtle border */
@@ -122,11 +132,10 @@
                 <div class="bg-card rounded-xl shadow-lg p-6 md:p-8 border border-subtle mb-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div class="md:col-span-1">
-                            <!-- Character Portrait - RAW GITHUB URL IMPLEMENTED -->
+                            <!-- Character Portrait -->
                             <img src="https://raw.githubusercontent.com/razurialdesul1001/dndstuff/main/ChatGPT%20Image%20Sep%2026%2C%202025%2C%2007_39_37%20PM.png" 
                                  alt="Grimmvine Primus Portrait" 
                                  class="rounded-xl shadow-md w-full h-auto object-cover border-4 border-wood">
-                            <!-- NOTE: I have replaced the placeholder with the RAW GitHub URL for your portrait. If this doesn't load, confirm the file name and that your GitHub branch is named 'main'. -->
                         </div>
                         <div class="md:col-span-2">
                             <h2 class="text-3xl font-bold text-main-heading mb-4">At a Glance</h2>
@@ -226,12 +235,6 @@
                     <div class="p-6 md:p-8" id="lore-content-container">
                         <div class="lore-content active" data-lore-content="harmony">
                             <h3 class="text-2xl font-bold text-accent mb-4">The Song of Creation</h3>
-                            <!-- Elarion Map/Art updated to use suggested RAW URL format for the second image -->
-                            <img src="https://raw.githubusercontent.com/razurialdesul1001/dndstuff/main/elarion-lore-art.jpg"
-                                 alt="Art of the Lands of Elarion"
-                                 class="w-full h-40 object-cover rounded-lg mb-4 border border-wood opacity-80"
-                                 onerror="this.style.display='none';">
-                            <!-- NOTE: You must replace 'elarion-lore-art.jpg' above with the actual file name of your Elarion art image. -->
                             <p class="text-[#D3D9CF] leading-relaxed">Elarion was born from chaos when the Grand Spirits sang the **First Harmony**, binding sea to land and life to death. This song still echoes in every corner of the world, representing the fundamental balance of existence. However, the **Discordants**, remnants of broken chords, constantly seek to unravel this harmony. To live in Elarion is to walk between the song and the silence, memory and forgetting - always striving to maintain the delicate balance.</p>
                         </div>
                         <div class="lore-content" data-lore-content="evergrowth">

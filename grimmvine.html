@@ -7,22 +7,30 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Updated Fonts: Cinzel (for carved/ancient headings) and Alegreya (for classic, readable body text) -->
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Links (Raw External URLs) -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Metamorphous&display=swap" rel="stylesheet">
     
     <!-- Chosen Palette: Primal Earth (Deep Forest Black, Light Ash/Bone, Muted Sage Accent) -->
-    <!-- Aesthetic Updates: Darker, moodier background. Enhanced contrast between text and background. Wood-like border color updated for greater visual presence. -->
     <style>
         /* New Dark & Primal Palette */
+        /* --- BACKGROUND BLEND IMPLEMENTED HERE --- */
         body {
-            font-family: 'Alegreya', serif; /* Changed to Alegreya for ancient, organic readability */
-            background-color: #151B18; /* Deep Forest Black */
-            color: #D3D9CF; /* Light Ash/Bone Text */
-            /* Add smooth scrolling behavior for better navigation feel */
+            font-family: 'Alegreya', serif;
+            /* Reverted to raw file name for elarion.jpg */
+            background-image: linear-gradient(rgba(21, 27, 24, 0.7), rgba(21, 27, 24, 0.7)), 
+                              url('elarion.jpg'); 
+            background-color: #151B18; /* Fallback color */
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-attachment: fixed; /* Keeps the image still as the user scrolls */
+            color: #D3D9CF; 
             scroll-behavior: smooth;
         }
+        /* --- END BACKGROUND BLEND --- */
+
         h1, h2, h3 {
-            font-family: 'Cinzel', serif; /* Changed to Cinzel for carved, stone-like headings */
+            /* Using Metamorphous for a rough, weathered, ancient look on titles */
+            font-family: 'Metamorphous', serif; 
         }
         .text-main-heading {
             color: #A8B49B; /* Muted Light Green for Headings */
@@ -31,7 +39,8 @@
             color: #77AD78; /* Muted Sage Green Accent */
         }
         .bg-card {
-            background-color: #262B28; /* Dark Charcoal/Green-Gray Card Background */
+            /* Using a slightly opaque background for the cards to allow the background image to show through slightly */
+            background-color: rgba(38, 43, 40, 0.95); /* Dark Charcoal/Green-Gray Card Background with 95% opacity */
         }
         .border-subtle {
             border-color: #4A544A; /* Dark subtle border */
@@ -99,6 +108,13 @@
             font-size: 1.25rem;
             border-radius: 0.5rem;
         }
+        /* New style for smaller text boxes, useful for Spirit/Region details */
+        .detail-box {
+            background-color: #2F3431;
+            border-left: 4px solid #77AD78; /* Sage accent bar */
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -122,11 +138,11 @@
                 <div class="bg-card rounded-xl shadow-lg p-6 md:p-8 border border-subtle mb-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div class="md:col-span-1">
-                            <!-- Character Portrait - PLACEHOLDER URL -->
-                            <img src="https://placehold.co/400x400/262B28/D3D9CF?text=GRIMMVINE+PORTRAIT" 
+                            <!-- Character Portrait -->
+                            <!-- Reverted to raw file name for the image -->
+                            <img src="https://raw.githubusercontent.com/razurialdesul1001/dndstuff/main/ChatGPT%20Image%20Sep%2026%2C%202025%2C%2007_39_37%20PM.png" 
                                  alt="Grimmvine Primus Portrait" 
                                  class="rounded-xl shadow-md w-full h-auto object-cover border-4 border-wood">
-                            <!-- NOTE: Replace the image src above with your publicly hosted link -->
                         </div>
                         <div class="md:col-span-2">
                             <h2 class="text-3xl font-bold text-main-heading mb-4">At a Glance</h2>
@@ -142,30 +158,52 @@
                     </div>
                 </div>
 
-                <!-- Consolidated Origin & Philosophy -->
+                <!-- Consolidated Origin & Philosophy (Expanded Content) -->
                 <div class="bg-card rounded-xl shadow-lg p-6 md:p-8 border border-subtle">
-                    <h2 class="text-3xl font-bold text-main-heading mb-4">The Forging & The Tenders of the Void</h2>
+                    <h2 class="text-3xl font-bold text-main-heading mb-4">The Origin: Forged by Duality</h2>
                      
-                    <p class="mb-6 text-[#D3D9CF] leading-relaxed border-l-4 border-wood pl-4 bg-[#363B38] p-4 rounded-md">
-                        Grimmvine Primus was not born, but **forged** near the **Resin Spire** in Myrrhollow. Their "spark" arose where the spire's roots met the **Hollow Crypts**, imbuing them with a body of dense, petrified wood, seams of rust-colored ore, and eyes that glow with a soft, cold blue. This unique origin fostered a deep connection to the *transition* between life and death, defining them as a **Circle of the Moon** Druid who embraces the raw, animalistic flow of the cycle in their Wild Shape. They belong to the secretive sub-sect known as the **Tenders of the Void**.
+                    <p class="mb-4 text-[#D3D9CF] leading-relaxed border-l-4 border-wood pl-4 bg-[#363B38] p-4 rounded-md">
+                        Grimmvine Primus was not naturally born, but **forged** through a volatile ritual near the **Resin Spire** in Myrrhollow. Unlike other Wildforged who are animated by a smooth, pure spirit-echo of the First Harmony, Grimmvine's "spark" was intentionally struck where the Spire's deep roots met the cold, decay-rich ground of the **Hollow Crypts**.
                     </p>
                     
-                    <h3 class="text-2xl font-bold text-main-heading mt-8 mb-4">Core Philosophy: The Tenders' Tenets</h3>
+                    <p class="mb-6 text-[#D3D9CF] leading-relaxed">
+                        The sacred and dangerous forging ritual was overseen by the two most powerful spiritual leaders of Myrrhollow, ensuring Grimmvine embodied the complete Cycle:
+                        
+                        <ul class="list-disc list-inside space-y-2 mt-3 ml-4">
+                            <li><strong class="text-accent">Arch-Lichen Vex (Hand of Rot):</strong> The somber, ancient master of the decay faction, who provided the raw, petrified wood and the wisdom of the long sleep, emphasizing that new life *must* follow finality.</li>
+                            <li><strong class="text-accent">High-Graft Elara (Hand of Blossom):</strong> The vibrant, pragmatic leader of the growth faction, who provided the powerful life-force and concentrated sap drawn from the Resin Spire, eager to create a sentinel strong enough to face outside threats.</li>
+                        </ul>
+                    </p>
+                    
+                    <p class="mb-6 text-[#D3D9CF] leading-relaxed border-t border-wood pt-4">
+                        This clash of elemental energies—Elara's aggressive growth meeting Vex's absolute decay—is why Grimmvine's essence is intrinsically linked to **transition**. Their body's unique composition (petrified wood and rust-colored ore) is a permanent testament to this unstable, dual creation. This deep connection to the instantaneous flux of life and death defined Grimmvine as a **Circle of the Moon** Druid, making their Wild Shape a raw, often violent, embrace of the untamed spirit.
+                    </p>
+                    
+                    <h2 class="text-3xl font-bold text-main-heading mt-10 mb-4">The Sub-Sect: Tenders of the Void</h2>
+                    <p class="mb-6 text-[#D3D9CF] leading-relaxed">
+                        Grimmvine belongs to the **Tenders of the Void**, a small, radical sub-sect of Bloomwardens who believe the Evergrowth's traditional balance is insufficient for the growing threat of the Discordant. This clandestine group meets in the deepest, silent rings of the Hollow Crypts, and their philosophical foundation was primarily laid by two key guiding figures:
+                    </p>
+                    <ul class="list-disc list-inside space-y-3 pl-4 mb-8">
+                        <li><strong class="text-accent">Venerable Myrr (The Rootbound Elder):</strong> The aged, root-bound leader of the Tenders and Grimmvine's primary mentor. Myrr speaks only in riddles and prophecies drawn from the earth's ancient memory. It was Myrr who first foresaw the necessity of the **Anchor Legend** and personally selected Grimmvine for the mission.</li>
+                        <li><strong class="text-accent">Elder Root Whisper (The Seer):</strong> A highly respected Wildforged seer who helped define the philosophical urgency of the Tenders. Root Whisper provided the initial geographical and spiritual tracing points for the Allseed, teaching Grimmvine how to listen for the "fraying edge" of the world's harmony.</li>
+                    </ul>
+
+                    <h3 class="2xl font-bold text-main-heading mb-4">Core Philosophy: The Tenders' Tenets</h3>
                     <div class="space-y-4">
-                        <!-- Tenet 1: Free Reading -->
+                        <!-- Tenet 1: The Fraying Edge -->
                         <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
                             <h4 class="font-semibold text-lg text-accent mb-1">1. The Fraying Edge</h4>
-                            <p class="text-[#D3D9CF] text-base">The Tenders believe the Evergrowth's insistence on *local* balance is shortsighted. The greatest threat isn't natural decay, but the **Discordant's** hunger, which is *anti-cycle*—it leaves ash, not seeds for new life. This external threat requires action outside of Bloom's traditional domain.</p>
+                            <p class="text-[#D3D9CF] text-base">The Tenders believe the Evergrowth's insistence on *local* balance is shortsighted. The greatest threat isn't natural decay, but the **Discordant's** hunger, which is *anti-cycle*—it leaves ash, not seeds for new life. This external, existential threat requires external action.</p>
                         </div>
-                        <!-- Tenet 2: Free Reading -->
+                        <!-- Tenet 2: External Seed (Anchor Legend) -->
                         <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
-                            <h4 class="font-semibold text-lg text-accent mb-1">2. The External Seed (Anchor Legend)</h4>
-                             <p class="text-[#D3D9CF] text-base">They believe the true **Allseed** is not meant to remain hidden. It must be found, awakened, and used as an **Anchor Legend**—a powerful catalyst to knit the fraying edges of the world's harmony back together, stabilizing Elarion against the void.</p>
+                            <h4 class="font-semibold text-lg text-accent mb-1">2. External Seed (Anchor Legend)</h4>
+                             <p class="text-[#D3D9CF] text-base">The true **Allseed** (Allspark) must be found, awakened, and used as an **Anchor Legend**—a powerful stabilizing force to knit the fraying edges of Elarion back together, stabilizing the world against the void.</p>
                         </div>
-                        <!-- Tenet 3: Free Reading -->
+                        <!-- Tenet 3: The Shadow-Hand -->
                         <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
                             <h4 class="font-semibold text-lg text-accent mb-1">3. The Shadow-Hand</h4>
-                             <p class="text-[#D3D9CF] text-base">To fight the Discordant's hunger, the Tenders must embrace what is needed: temporary destruction and necessary risk. They willingly travel far outside the Evergrowth, taking on tasks that traditional Bloomwardens see as dangerous or outright heretical, to ensure the greater cycle endures.</p>
+                             <p class="text-[#D3D9CF] text-base">To succeed, the Tenders must embrace temporary destruction and necessary risk. They willingly travel far outside the Evergrowth, taking on tasks that traditional Bloomwardens see as dangerous or outright heretical, to ensure the greater cycle endures.</p>
                         </div>
                     </div>
                 </div>
@@ -175,7 +213,7 @@
             <section id="mission" class="content-section">
                 <div class="bg-card rounded-xl shadow-lg p-6 md:p-8 border border-subtle">
                     <h2 class="text-3xl font-bold text-main-heading mb-2">A Seed in the Storm</h2>
-                    <p class="text-[#A8B49B] mb-8 leading-relaxed">Chosen by the elder Venerable Myrr, Grimmvine was sent from the Evergrowth on a terrifyingly simple quest. This section outlines the core directives of that mission. Click each step to see its full description.</p>
+                    <p class="text-[#A8B49B] mb-8 leading-relaxed">Chosen personally by **Venerable Myrr**, Grimmvine was gifted a small, unblinking eye of polished petrified wood—a focus for the Allseed's echo—and sent forth. This section outlines the core directives of that mission. Click each step to see its full description.</p>
                     
                     <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8" id="mission-steps-container">
                         <div class="mission-step text-center p-4 border-2 border-accent/50 rounded-xl cursor-pointer w-full md:w-1/3 relative active" data-mission="forth">
@@ -192,11 +230,11 @@
                     <div id="mission-description-container" class="mt-8 p-6 bg-[#2F3431] rounded-xl border border-subtle">
                         <div class="mission-description-content active" data-mission-content="forth">
                             <h4 class="font-bold text-xl mb-2 text-accent">Leave the Evergrowth</h4>
-                            <p class="text-[#D3D9CF]">Leave the safety of the Evergrowth and travel to the unstable regions of the world, starting with the **Shattered Coast**, where the Discordant legacy and volatile magic are known to linger. Operate as a member of the Lantern Company to gather information and resources.</p>
+                            <p class="text-[#D3D9CF]">Leave the safety of the Evergrowth and travel to the unstable regions of the world, starting with the **Shattered Coast** where the Discordant legacy and volatile magic are known to linger. Grimmvine operates as a newly signed **Spark** in the **Lantern Company** to use the guild's resources for their mission.</p>
                         </div>
                         <div class="mission-description-content" data-mission-content="echo">
                             <h4 class="font-bold text-xl mb-2 text-accent">Find Echoes of the First War</h4>
-                            <p class="text-[#D3D9CF]">The Allseed is too powerful to be found directly. Grimmvine must first seek out the *echoes* of the First War—relics, scars, or places where the spirit-sparks of the champions **Bloom's Fang** and **Iron Maw** might still reside, using them to trace the Allseed's location.</p>
+                            <p class="text-[#D3D9CF]">The Allseed is too powerful to be found directly. Grimmvine must first seek out the *echoes* of the **First War**—relics, scars, or places where the spirit-sparks of the champions **Bloom's Fang** and **Iron Maw** might still reside, using them to trace the Allseed's location.</p>
                         </div>
                         <div class="mission-description-content" data-mission-content="prevent">
                             <h4 class="font-bold text-xl mb-2 text-accent">Secure the Allseed</h4>
@@ -211,40 +249,135 @@
                 <div class="bg-card rounded-xl shadow-lg border border-subtle">
                     <div class="p-6 md:p-8">
                         <h2 class="text-3xl font-bold text-main-heading mb-2">Elarion: A Primer</h2>
-                        <p class="text-[#A8B49B] mb-6 leading-relaxed">This archive contains essential knowledge about the world, its forces, and the factions Grimmvine will encounter. Use these tabs to explore the foundational lore of Elarion, the Evergrowth, the Discordant, and the Lantern Company.</p>
+                        <p class="text-[#A8B49B] mb-6 leading-relaxed">This archive contains essential knowledge about the world, its forces, and the factions Grimmvine will encounter. Use these tabs to explore the foundational lore of Elarion.</p>
                     </div>
 
                     <div class="border-b border-subtle px-6 md:px-8 bg-[#2F3431]">
-                        <nav class="-mb-px flex space-x-6" id="lore-tabs-container">
+                        <nav class="-mb-px flex space-x-6 overflow-x-auto" id="lore-tabs-container">
                             <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent active" data-lore="harmony">The First Harmony</button>
-                            <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent" data-lore="evergrowth">The Evergrowth</button>
+                            <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent" data-lore="spirits">The Grand Spirits</button>
+                            <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent" data-lore="regions">The Lands of Elarion</button>
                             <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent" data-lore="discordant">The Discordant</button>
                             <button class="lore-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-[#D3D9CF] hover:text-accent" data-lore="lanterns">The Lantern Company</button>
                         </nav>
                     </div>
 
                     <div class="p-6 md:p-8" id="lore-content-container">
+                        <!-- 1. The First Harmony -->
                         <div class="lore-content active" data-lore-content="harmony">
-                            <h3 class="text-2xl font-bold text-accent mb-4">The Song of Creation</h3>
-                            <!-- Elarion Map/Art added here - PLACEHOLDER URL -->
-                            <img src="https://placehold.co/700x160/262B28/D3D9CF?text=ELARION+LORE+ART"
-                                 alt="Art of the Lands of Elarion"
-                                 class="w-full h-40 object-cover rounded-lg mb-4 border border-wood opacity-80"
-                                 onerror="this.style.display='none';">
-                            <!-- NOTE: Replace the image src above with your publicly hosted link -->
-                            <p class="text-[#D3D9CF] leading-relaxed">Elarion was born from chaos when the Grand Spirits sang the **First Harmony**, binding sea to land and life to death. This song still echoes in every corner of the world, representing the fundamental balance of existence. However, the **Discordants**, remnants of broken chords, constantly seek to unravel this harmony. To live in Elarion is to walk between the song and the silence, memory and forgetting - always striving to maintain the delicate balance.</p>
+                            <h3 class="2xl font-bold text-accent mb-4">The Song of Creation</h3>
+                            <p class="text-[#D3D9CF] leading-relaxed mb-4">Elarion was born in storm and silence. From the initial chaos, the **Grand Spirits** sang the **First Harmony**, a song that bound sea to land, sky to stone, and life to death. This song echoes in every corner of the world—in the crash of the tide, the call of the wind, and the cycle of bloom and rot.</p>
+                            <p class="text-[#D3D9CF] leading-relaxed border-l-4 border-wood pl-4 bg-[#363B38] p-4 rounded-md">
+                                Mortals are seen as living chords of this Harmony, born from the mingling of all Six Spirits. However, the Harmony is fragile. The **Discordants**, remnants of broken chords, strain against the song, seeking to unravel what was woven, making the world unstable in this **Fifth Age**.
+                            </p>
                         </div>
-                        <div class="lore-content" data-lore-content="evergrowth">
-                            <h3 class="text-2xl font-bold text-accent mb-4">Bloom's Gift-Hand</h3>
-                            <p class="text-[#D3D9CF] leading-relaxed mb-4">A jungle overflowing with life, where every root and stream hums with spirit. Life is abundant, but dangerously so. The city of **Myrrhollow** is built around the Crown of Seasons, a hill where all four seasons exist at once. It is ruled by the **Bloomwardens**, druids split into two factions: the **Hands of Blossom** (growth) and the **Hands of Rot** (decay). The Wildforged are seen as sacred guardians of this land, and legends of the **Allseed**—the heart of Bloom's first flowering—are whispered by the elders.</p>
+
+                        <!-- 2. The Grand Spirits (NEW SECTION) -->
+                        <div class="lore-content" data-lore-content="spirits">
+                            <h3 class="2xl font-bold text-accent mb-4">The Six Pillars of Elarion</h3>
+                            <p class="text-[#D3D9CF] leading-relaxed mb-6">The Grand Spirits are more principles than persons, yet their influence shapes all reality. They are distant, but mortals deal constantly with their **lesser echoes** (the spirits in objects and nature). </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Breath -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Breath</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies air, language, and freedom. Seen as a wandering traveler or trickster. **Worship:** Sky-offerings and whispered prayers carried on the wind.</p>
+                                </div>
+                                <!-- Flame -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Flame</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies fire, passion, and destruction. Both hearth and wildfire. **Worship:** Hearthfires, festivals, and controlled burns for renewal.</p>
+                                </div>
+                                <!-- Tides -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Tides</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies water, memory, and flow. Called the Dreaming One. **Worship:** Water shrines, songs sung to rivers, and offerings tossed into the sea.</p>
+                                </div>
+                                <!-- Stone -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Stone</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies mountains, soil, and endurance. The patient witness of ages. **Worship:** Building cairns, stacked stones, and carving prayers into rock.</p>
+                                </div>
+                                <!-- Bloom -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Bloom</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies fertility, growth, and decay (the full cycle). **Worship:** Burial rites, planting festivals, and blood offerings mixed into soil.</p>
+                                </div>
+                                <!-- Veil -->
+                                <div class="detail-box">
+                                    <h4 class="font-semibold text-xl text-main-heading mb-1">The Veil</h4>
+                                    <p class="text-[#D3D9CF] text-base">Embodies night, shadows, and the spirit realm. Keeper of the unseen roads. **Worship:** Dream-rituals, masks, and silence under the moon.</p>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- 3. The Lands of Elarion (EXPANDED REGIONS) -->
+                        <div class="lore-content" data-lore-content="regions">
+                             <h3 class="2xl font-bold text-accent mb-4">Regions & Their Echoes</h3>
+                            <p class="text-[#D3D9CF] leading-relaxed mb-6">Each major region of the world is shaped by the strongest echo of one of the Grand Spirits:</p>
+                            
+                            <div class="space-y-4">
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Evergrowth (Bloom - Life)</h4>
+                                    <p class="text-[#D3D9CF] text-base">An overfertile jungle where life is abundant but chaotic. The city of Myrrhollow exists here, guarded by the **Bloomwardens** (Hands of Blossom and Hands of Rot). This is Grimmvine's homeland.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Hollow Garden (Bloom - Decay)</h4>
+                                    <p class="text-[#D3D9CF] text-base">A twilight land of fungi, bone groves, and sacred decay. Here, death is honored as the necessary seed of new life, guiding the cycle of withering and renewal.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Shattered Coast (The Tides)</h4>
+                                    <p class="text-[#D3D9CF] text-base">Storm-wrecked cliffs, drowned ruins, and lantern-lit ports. Pirates, cults, and ancient relics haunt its waters. **Netharis**, Grimmvine's current base, is the major city here.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Stone Crown (The Stone)</h4>
+                                    <p class="text-[#D3D9CF] text-base">Jagged mountain ranges and fortress-cities carved from living stone. The people are bound by oaths as enduring as the peaks; strength, endurance, and tradition rule here.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">Skyreach (The Breath)</h4>
+                                    <p class="text-[#D3D9CF] text-base">Vast, open steppes where the wind is sacred. Nomadic clans ride endlessly, tying honor to the spoken word and the freedom of movement.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Ashen Wastes (The Flame - Ruin)</h4>
+                                    <p class="text-[#D3D9CF] text-base">A desert of storms, ash, and ruin where the Flame's destructive hand holds sway. Scarred survivors scrape a living, haunted by Discordant remnants. This is the **Origin** of Grimmvine's sworn foes.</p>
+                                </div>
+                                <div class="p-4 bg-[#2F3431] rounded-xl border border-subtle">
+                                    <h4 class="font-semibold text-lg text-accent mb-1">The Umbral Expanse (The Veil)</h4>
+                                    <p class="text-[#D3D9CF] text-base">A hidden, mist-shrouded land where dreams and shadows hold sway. Masks, courtesies, and secrets rule, and little is spoken that is not layered with meaning.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. The Discordant (UPDATED CONTENT) -->
                         <div class="lore-content" data-lore-content="discordant">
-                             <h3 class="text-2xl font-bold text-accent mb-4">The Unraveling Hunger</h3>
-                            <p class="text-[#D3D9CF] leading-relaxed mb-4">Constructs born without harmony, animated by pure hunger. Forged in the **Ashen Wastes**, they are the sworn foes of the Wildforged. The Discordant devour the world to fuel themselves, leaving behind zones of lifeless ash where nothing can grow. They are a prophecy of "iron beasts that eat the world," and their return threatens to break Bloom's cycle itself. They seek the Allseed not for life, but as a weapon of endless consumption.</p>
+                             <h3 class="2xl font-bold text-accent mb-4">The Unraveling Hunger</h3>
+                            <p class="text-[#D3D9CF] leading-relaxed mb-4">The Discordant are your people's sworn foes—constructs born without harmony, animated by pure hunger and the black flame of the Ashen Wastes. They are spirits bound to consumption without end.</p>
+                            <ul class="list-disc list-inside space-y-2 pl-4 mb-6 text-[#D3D9CF]">
+                                <li>**Nature:** They devour the world to fuel themselves, leaving behind zones of **lifeless ash** where nothing grows—an *anti-cycle* that defies Bloom's will.</li>
+                                <li>**The Goal:** They seek the **Allseed** not to consume it, but to twist it into a weapon of endless, global consumption that would break the First Harmony forever.</li>
+                                <li>**Legacy:** The tribes' belief is that they are a prophecy fulfilled—"iron beasts that eat the world." Their return signals that Bloom's cycle itself may be broken.</li>
+                            </ul>
                         </div>
+
+                        <!-- 5. The Lantern Company (UPDATED CONTENT) -->
                         <div class="lore-content" data-lore-content="lanterns">
-                            <h3 class="text-2xl font-bold text-accent mb-4">Light in the Storm</h3>
-                            <p class="text-[#D3D9CF] leading-relaxed mb-4">Based in the city of **Netharis** on the Shattered Coast, the Lantern Company is an adventurers' guild. Their motto is *"Light in the storm, truth in the dark."* They take on contracts ranging from escorts to relic recovery, operating out of **Stormhaven Hall**. Members are expected to follow the Codes of the Lantern, which emphasize loyalty, honor, and fairness. Grimmvine has joined as a **Spark** (a new recruit) to use the guild's resources and position to investigate Discordant activity on the coast.</p>
+                            <h3 class="2xl font-bold text-accent mb-4">Light in the Storm</h3>
+                            <p class="text-[#D3D9CF] leading-relaxed mb-4">Based in the tide-washed city of **Netharis**, the Lantern Company is the adventurers' guild and Grimmvine's current cover. Their motto is *"Light in the storm, truth in the dark."*</p>
+                            
+                            <h4 class="font-bold text-xl text-main-heading mb-2">Key Locations & Personnel</h4>
+                            <ul class="list-disc list-inside space-y-2 pl-4 mb-6 text-[#D3D9CF]">
+                                <li>**Stormhaven Hall:** The sprawling guildhouse, featuring a **Great Hall & Mission Board** and the **Lantern Bar** (where ship berths and rumors are found).</li>
+                                <li>**Ancestor Harbor:** Docks where hundreds of storm-lamps burn for the living and the lost; a key area for shrine rites.</li>
+                                <li>**Darvo Wakecutter:** The weathered Water Genasi who runs Stormhaven Hall. Gruff but fair, he is Grimmvine's guide into the Company's official work.</li>
+                            </ul>
+                            
+                             <h4 class="font-bold text-xl text-main-heading mb-2">Codes of the Lantern</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-3 bg-[#3C413E] rounded-md">Carry a light. Always.</div>
+                                <div class="p-3 bg-[#3C413E] rounded-md">Keep faith with crew. Don't abandon comrades.</div>
+                                <div class="p-3 bg-[#3C413E] rounded-md">Honor the names. Speak the dead before danger.</div>
+                                <div class="p-3 bg-[#3C413E] rounded-md">Take fair share. Standard split unless agreed.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,11 +390,17 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const contentSections = document.querySelectorAll('.content-section');
 
+            // Set the initial active section to 'backstory'
+            const initialSection = document.getElementById('backstory');
+            if (initialSection) {
+                initialSection.classList.add('active');
+            }
+
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const sectionId = link.getAttribute('data-section');
-                    const targetSection = document.getElementById(sectionId); // Get the target section element
+                    const targetSection = document.getElementById(sectionId); 
 
                     // 1. Update Navigation Bar Active State
                     navLinks.forEach(l => l.classList.remove('active'));
@@ -280,7 +419,7 @@
                     if (targetSection) {
                         targetSection.scrollIntoView({ 
                             behavior: 'smooth',
-                            block: 'start' // Scroll to the start of the section
+                            block: 'start' 
                         });
                     }
                 });
@@ -289,6 +428,13 @@
             // Mission Steps (Swap active mission description)
             const missionSteps = document.querySelectorAll('.mission-step');
             const missionDescriptions = document.querySelectorAll('.mission-description-content');
+            
+            // Set initial active mission step
+            const initialMissionStep = document.querySelector('[data-mission="forth"]');
+            const initialMissionContent = document.querySelector('[data-mission-content="forth"]');
+            if(initialMissionStep) initialMissionStep.classList.add('active');
+            if(initialMissionContent) initialMissionContent.classList.add('active');
+
             missionSteps.forEach(step => {
                 step.addEventListener('click', () => {
                     const missionId = step.getAttribute('data-mission');
@@ -309,6 +455,13 @@
             // Lore Tabs (Swap active lore content)
             const loreTabs = document.querySelectorAll('.lore-tab');
             const loreContents = document.querySelectorAll('.lore-content');
+
+            // Set initial active lore tab
+            const initialLoreTab = document.querySelector('[data-lore="harmony"]');
+            const initialLoreContent = document.querySelector('[data-lore-content="harmony"]');
+            if(initialLoreTab) initialLoreTab.classList.add('active');
+            if(initialLoreContent) initialLoreContent.classList.add('active');
+
             loreTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const loreId = tab.getAttribute('data-lore');
@@ -330,4 +483,3 @@
 
 </body>
 </html>
-dndstuff/grimmvine.html at c652e7f2f0a7f82bde93a20582a97e8ac4cd25f6 · razurialdesul1001/dndstuff 
